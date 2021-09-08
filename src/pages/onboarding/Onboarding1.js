@@ -2,16 +2,23 @@ import React from 'react'
 import { Link } from "react-router-dom";
 import mapBase from '../../assets/images/mapbase.png'
 import styled from 'styled-components'
+import { SIZES } from '../../constants';
 
 
 const Onboarding1 = () => {
     return (
         <div style={styles.container}>
-            <p style={styles.headerText}>Header Text</p>
-            <p style={styles.description}>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium</p>
-            <Link to="/get-started">
-                <Button>Get started</Button>
-            </Link>
+            <p style={styles.headerText}>Welcome to Afriexporter</p>
+            <p style={styles.description}>...trade, connect and learn</p>
+            <div className="w3-row" style={{marginTop: 40 * SIZES.scale}}>
+                <div className="w3-third">
+                    <Link to="/get-started">
+                        <Button>Get started</Button>
+                    </Link>
+                </div>
+                <div className="w3-twothird" style={{marginTop: 15}}>I have an account</div>
+            </div>
+            
         </div>
     )
 }
@@ -22,15 +29,15 @@ const styles = {
     container: {
         color: '#232323',
         backgroundImage: 'url(${mapBase})',
-        paddingTop: 200,
+        paddingTop: 200 * SIZES.scale,
     },
     headerText: {
-        fontSize: 60,
-        fontWeight: 'bold'
+        fontSize: 60 * SIZES.scale,
+        fontFamily: 'Segoe UI Bold'
     },
     description: {
-        fontSize: 18,
-        marginTop: -60
+        fontSize: 18 * SIZES.scale,
+        marginTop: -60 * SIZES.scale
     }
     
 }

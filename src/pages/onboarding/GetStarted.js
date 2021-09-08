@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import leftArrow from '../../assets/icons/left_arrow.png'
 import LogoText from '../../components/LogoText'
 import Button from '../../components/CustomButton'
+import { SIZES } from '../../constants';
 
 const GetStarted = () => {
     const [firstName, setFirstName] = useState("")
@@ -12,11 +13,11 @@ const GetStarted = () => {
 
     return (
         <div style={styles.container}>
-            <div>
+            <div style={{paddingLeft: 118 * SIZES.scale}}>
                 <Link to='/*' style={styles.link}><img width='18px' height='15px' src={leftArrow} />&nbsp;Go back</Link>
                 <div style={{marginTop: 30}}>&nbsp;</div>
-                <LogoText fontSize={45} />
-                <div style={{fontSize: 22, marginTop:10}}>Let's get to meet you</div>
+                <LogoText fontSize={45 * SIZES.scale} />
+                <div style={{fontSize: 22 * SIZES.scale, marginTop:10, fontFamily: 'Segoe UI Bold'}}>Let's get to meet you</div>
                 
                 <input 
                     style={styles.textInput} 
@@ -53,7 +54,7 @@ const GetStarted = () => {
                 </Link>
                 <p style={{paddingLeft: 50}}>If you have an account,&nbsp; 
                     <Link to="/login" style={{textDecoration: 'none'}}>
-                        <strong>Log In</strong>
+                        <span style={{fontFamily: 'Segoe UI Bold'}}>Log In</span>
                     </Link>
                 </p>
                 
@@ -68,19 +69,21 @@ export default GetStarted
 
 const styles = {
     container: {
-        display: 'flex',
+        flexDirection: 'row',
         color: '#232323',
-        paddingTop: 100,
+        paddingTop: 100 * SIZES.scale,
     },
     link: {
         textDecoration: 'none',
-        marginBottom: 50
+        marginBottom: 50 * SIZES.scale,
+        fontFamily: 'Segoe UI Bold'
     },
     textInput: {
         border: 'none',
         borderBottom: '1px solid #BDBDBD' ,
-        width: 343,
-        marginTop: 43
+        width: 343 * SIZES.scale,
+        marginTop: 43 * SIZES.scale,
+        backgroundColor: 'transparent'
 
     },
 }

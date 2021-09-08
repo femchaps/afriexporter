@@ -3,6 +3,12 @@
 @font-face {
   font-family: "Segoe UI";
   src: local("Segoe UI"),
-    url("./assets/fonts/Segoe-UI.ttf") format("ttf");
+    url("./assets/fonts/Segoe UI.woff") format("woff");
   font-display: swap;
 }
+
+ @font-face {
+    font-family: 'Segoe UI Bold';
+    src: local('Segoe UI Bold'), 
+      url('./assets/fonts/Segoe UI Bold.woff') format('woff');
+    }

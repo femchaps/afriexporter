@@ -4,6 +4,9 @@ import Button from '../../components/CustomButton'
 import { usePasswordValidation } from '../../hooks/usePasswordValidation';
 import SuccessIcon from '../../assets/icons/success.png'
 import ErrorIcon from '../../assets/icons/errorIcon.png'
+import {SIZES, COLORS} from '../../constants/'
+import leftArrow from '../../assets/icons/left_arrow.png'
+import LogoText from '../../components/LogoText'
 //https://medium.com/@steven_creates/creating-a-custom-react-hook-for-password-validation-46fc421c16ee
 
 const CreatePassword = () => {
@@ -29,9 +32,12 @@ const CreatePassword = () => {
 
     return (
         <div style={styles.container}>
-            <div>
-                <div style={{fontSize: 22, marginTop:10}}>Create your password</div>
-                <div className="w3-row" style={{paddingTop: 43}}>
+            <div style={{paddingLeft: 118 * SIZES.scale}}>
+                <Link to='/get-started' style={styles.link}><img width='18px' height='15px' src={leftArrow} />&nbsp;Go back</Link>
+                <div style={{marginTop: 30 * SIZES.scale}}>&nbsp;</div>
+                <LogoText fontSize={45 * SIZES.scale} />
+                <div style={{fontSize: 22 * SIZES.scale, marginTop:10 * SIZES.scale, fontFamily: 'Segoe UI Bold'}}>Create your password</div>
+                <div className="w3-row" style={{paddingTop: 43 * SIZES.scale}}>
                     <input 
                     className='w3-col l11 m11 s11'
                         type='password'
@@ -48,7 +54,7 @@ const CreatePassword = () => {
                         }
                     </div>
                 </div>
-                <div className="w3-row" style={{paddingTop: 43}}>
+                <div className="w3-row" style={{paddingTop: 43 * SIZES.scale}}>
                     <input 
                     className='w3-col l11 m11 s11'
                         type='password'
@@ -58,37 +64,38 @@ const CreatePassword = () => {
                             setPassword({...password, secondPassword: e.target.value})
                         }}
                     />
-                    <div className='w3-col l1 m1 s1' style={{marginLeft:-26}}>
+                    <div className='w3-col l1 m1 s1' style={{marginLeft:-26 * SIZES.scale}}>
                         { upperCase && lowerCase && validLength && match ?
                             <img src={SuccessIcon} width='17px' height = '17px' /> : 
                             <img src={ErrorIcon} width='17px' height = '17px' />
                         }
                     </div>
                 </div>
-                
-                    <p>Password should be: </p>
-                    <div className="w3-row">
-                        <div className='w3-col l11 m11 s11'>At least 6 characters long</div>
-                        <div className='w3-col l1 m1 s1'>
-                            { validLength ?
-                                <img src={SuccessIcon} width='17px' height = '17px' /> : 
-                                <img src={ErrorIcon} width='17px' height = '17px' />
-                            }
+                    <div style={{color: COLORS.secondary}}>
+                        <p style={{marginTop: 25 }}>Password should be: </p>
+                        <div className="w3-row">
+                            <div className='w3-col l11 m11 s11'>At least 6 characters long</div>
+                            <div className='w3-col l1 m1 s1'>
+                                { validLength ?
+                                    <img src={SuccessIcon} width='17px' height = '17px' /> : 
+                                    <img src={ErrorIcon} width='17px' height = '17px' />
+                                }
+                            </div>
                         </div>
-                    </div>
-                    <div className="w3-row">
-                        <div className='w3-col l11 m11 s11'>A mixture of UPPER and lower cases</div>
-                        <div className='w3-col l1 m1 s1'>
-                            { upperCase && lowerCase ?
-                                <img src={SuccessIcon} width='17px' height = '17px' /> : 
-                                <img src={ErrorIcon} width='17px' height = '17px' />
-                            }
+                        <div className="w3-row">
+                            <div className='w3-col l11 m11 s11'>A mixture of UPPER and lower cases</div>
+                            <div className='w3-col l1 m1 s1'>
+                                { upperCase && lowerCase ?
+                                    <img src={SuccessIcon} width='17px' height = '17px' /> : 
+                                    <img src={ErrorIcon} width='17px' height = '17px' />
+                                }
+                            </div>
                         </div>
                     </div>
                     
                 
-                <Link to="/create-password">
-                    <Button style={{padding: '16px 142px', marginTop: 60}}>Submit</Button>
+                <Link to="/user-type">
+                    <Button style={{padding: '16px 142px', marginTop: 151 * SIZES.scale}}>Submit</Button>
                 </Link>
                 
             </div>
@@ -105,17 +112,17 @@ const styles = {
     container: {
         display: 'flex',
         color: '#232323',
-        paddingTop: 150,
+        paddingTop: 100 * SIZES.scale,
     },
     link: {
         textDecoration: 'none',
-        marginBottom: 50
+        marginBottom: 50 * SIZES.scale,
+        fontFamily: 'Segoe UI Bold'
     },
     textInput: {
         border: 'none',
         borderBottom: '1px solid #BDBDBD' ,
-        width: 340
-        
-
+        width: 340 * SIZES.scale,
+        backgroundColor: 'transparent'
     },
 }

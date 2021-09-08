@@ -4,11 +4,13 @@ import Onboarding from './pages/onboarding/'
 
 const App = () => {
   return (
+    <div style={{fontFamily: 'Segoe UI'}}>
     <Router>
       <Switch>
         <Route path="*" component={Onboarding}/>
       </Switch>
     </Router>
+    </div>
     
   )
 }
