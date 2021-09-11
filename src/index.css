@@ -12,3 +12,6 @@
     src: local('Segoe UI Bold'), 
       url('./assets/fonts/Segoe UI Bold.woff') format('woff');
     }
+
+
+    @import url('https://fonts.googleapis.com/css2?family=Mulish:wght@400;800;900&display=swap');
